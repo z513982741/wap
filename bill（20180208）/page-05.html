@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="imagemode" content="force">
+	<title>全年消费账单</title>
+	<link rel="stylesheet" href="css/global.css?20180208">
+	<link rel="stylesheet" href="css/swiper/swiper-4.1.0.min.css">
+	<link rel="stylesheet" href="css/swiper/animate.min.css">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="page-title"><span><a href="#"><img src="img/icon-fx.png" alt=""></a></span></div>
+		<div class="page-box">
+			<div class="page-box-title">全年消费账单</div>
+			<div class="page-box-xx">
+				<ul>
+					<li>使用优惠券：<strong>2584</strong> 张</li>
+					<li>优惠券额度：<strong>1024</strong> 张</li>
+				</ul>
+				<p>荣获平台奖项：</p>
+				<dl>
+					<dd><img src="img/img-02.png" alt=""></dd>
+					<dt>美食家</dt>
+					<dd>您已打败全国35%的食客</dd>
+				</dl>
+				<h5>吃货脚印</h5>
+				<ol>
+					<li><img src="img/logo/logo-01.jpg" alt=""></li>
+					<li><img src="img/logo/logo-02.jpg" alt=""></li>
+					<li><img src="img/logo/logo-03.jpg" alt=""></li>
+					<li><img src="img/logo/logo-04.jpg" alt=""></li>
+					<li><img src="img/logo/logo-05.jpg" alt=""></li>
+					<li><img src="img/logo/logo-06.jpg" alt=""></li>
+				</ol>
+			</div>
+		</div>
+		<div class="page-bx"></div>
+		<div class="page-icon"><a href="#" id="bx-kai">开启年终宝箱<br><img src="img/page-icon.png" alt=""></a></div>
+	</div>
+
+	<!--动画-->
+	<div class="an-bg none"></div>
+	<div class="an-cd none"><img src="img/animate/bg.png" alt=""></div>
+	<div class="an-bx none"><a href="#" id="bx"><img src="img/animate/box-01.png" alt=""></a></div>
+	
+	<div>
+		<div class="an-red-icon anmited-sf none"><img src="img/animate/bg-01.png" alt=""></div>
+		<div class="an-red-bx none"><img src="img/animate/box-02.png" alt=""></div>
+		<div class="an-red anmited-sf none">
+			<h5>恭喜你</h5>
+			<dl>
+				<dt>优惠券</dt>
+				<dd><strong>20</strong>元</dd>
+				<dd><a href="#">点击领取</a></dd>
+			</dl>
+			<p class="flash animated infinite"><img src="img/animate/stars.png" alt=""></p>
+		</div>
+	</div>
+	<!--动画 end-->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper/swiper-4.1.0.min.js"></script>
+	<script src="js/swiper/swiper.animate1.0.3.min.js"></script>
+	<script>
+
+	//开启宝箱
+	$("#bx-kai").click(function(){
+		var box = $(".an-bg,.an-cd,.an-bx");
+		box.show();
+		$(".an-cd").addClass("animated bounceIn");
+		$(".an-bx").addClass("animated bounceInUp");
+	})
+
+	//点击宝箱
+	$("#bx").click(function(){
+		$(this).parent().hide();
+		$(".an-red-bx").show().addClass("animated bounceInUp");
+		setTimeout(function(){
+			$(".anmited-sf").show().addClass("animate-red");
+		},1000)
+		
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="imagemode" content="force">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+	<div class="container">
+		<div class="login-bg"></div>
+		<div class="login-box">
+			<form action="" id="login-form">
+				<div class="login-title">用户登录</div>
+				<div class="login-bor">
+					<input type="text" class="form-input bg" maxlength="11" name="phone" value="">
+				</div>
+				<div class="login-message">
+					<dl>
+						<dt><input type="text" class="form-input" maxlength="6" name="message" value=""></dt>
+						<dd><button type="button" class="message-btn">发送验证码</button></dd>
+					</dl>
+				</div>
+				<div class="login-sub">
+					<button type="submit" class="btn btn-style" id="login-btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

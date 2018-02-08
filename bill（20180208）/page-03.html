@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<meta name="imagemode" content="force">
+	<title>数据分析</title>
+	<link rel="stylesheet" href="css/global.css?20180208">
+	<link rel="stylesheet" href="css/swiper/swiper-4.1.0.min.css">
+	<link rel="stylesheet" href="css/swiper/animate.min.css">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="page-title">时间分布</div>
+		<div class="page-time"></div>
+		<div class="page-pointer">
+			<div class="page-pointer-title">地区分布</div>
+			<div class="page-pointer-map"></div>
+			<div class="page-pointer-box">
+				<ul>
+					<li>北京市西城区西单北大街133号太运广场7层：<strong>2579</strong> 张</li>
+					<li>朝阳区三丰北里2号悠唐购物中心5层：<strong>124</strong> 张</li>
+					<li>北京市东城区新中街甲3号蜂巢剧场B1层：<strong>1429</strong> 张</li>
+				</ul>
+			</div>
+		</div>
+		<div class="page-icon"><a href="page-04.html"><img src="img/page-icon.png" alt=""></a></div>
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/swiper/swiper-4.1.0.min.js"></script>
+	<script src="js/swiper/swiper.animate1.0.3.min.js"></script>
+	<!--图表-->
+	<script src="js/highcharts/highcharts.js"></script>
+	<script src="js/highcharts/exporting.js"></script>
+	<script src="js/highcharts/highcharts-zh_CN.js"></script>
+	<!--图表end -->
+	<script>
+		$(function () {
+			// 时间分布
+			var timeData = [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4];
+			$('.page-time').highcharts({
+			    chart: {
+			        type: 'column',
+			        backgroundColor: null,
+	            	plotBorderWidth: "0"
+			    },
+			    title: {
+			        text: null,
+			        textStyle: {
+			            color: '#f00',
+			            fontSize: 16,
+			        }
+			    },
+			    xAxis: {
+			        categories: [
+			            '1月',
+			            '2月',
+			            '3月',
+			            '4月',
+			            '5月',
+			            '6月',
+			            '7月',
+			            '8月',
+			            '9月',
+			            '10月',
+			            '11月',
+			            '12月'
+			        ],
+			        crosshair: true,
+			        labels: {
+                        style: {
+                            color: '#fff'
+                        }
+                    }
+			    },
+			    yAxis: {  
+					title: null,  
+					labels:{  
+						enabled:false   //去掉文字信息
+					}, 
+					min: 0,
+		            stackLabels: {
+		                enabled: true,
+		                style: {
+		                    color: "#fff"
+		                }
+		            },
+		            gridLineColor: "rgba(255,255,255,.3)", //设置边框线
+				}, 
+				//去掉筛选
+				legend: {
+	                enabled: false
+	            }, 
+			    // 去水印
+			    credits: {
+			    	enabled: false
+			    },
+			    // 去右上角打印
+			    exporting: {  
+		            enabled: false  
+				},
+			    plotOptions: {
+			    	allowPointSelect: false,
+		            column: {
+		                stacking: 'normal' // 显示文字在图表顶部
+		            },
+		            series: {
+		                marker: {
+		                    enabled: false
+		                }
+		            }
+		        },
+			    series: [{
+			        name: ' ',
+			        data: timeData, //展示数据
+			        color: {
+			        	linearGradient: [0, 0, 500, 500],
+		                stops: [
+		                    [0, 'rgba(0, 242, 254, .8)'],
+		                    [1, 'rgba(79, 172, 254, .8)']
+		                ]
+			        },
+			        borderWidth: "0"
+			    }],
+			});
+
+			// 饼图
+			var mapData = [['朝阳区',67],['西城区',21],['东城区',12]]
+			$('.page-pointer-map').highcharts({
+				colors: ['#00a0e9', '#80c269', '#f19149', '#f7a35c', '#8085e9', '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+		        chart: {
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false,
+		            backgroundColor: null
+		        },
+		        title: {
+		            text: null
+		        },
+		        tooltip: {
+		            headerFormat: '{series.name}<br>',
+		            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    distance: 5, //调整文字间距
+		                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		                    style: {
+		                        color: "#666"
+		                    }
+		                }
+		            }
+		        },
+		        series: [{
+		            type: 'pie',
+		            name: '  ',
+		            data: mapData
+		        }],
+		        //去掉筛选
+				legend: {
+	                enabled: false
+	            }, 
+			    // 去水印
+			    credits: {
+			    	enabled: false
+			    },
+			    // 去右上角打印
+			    exporting: {  
+		            enabled: false  
+				},
+		    });
+		});
+	</script>
+</body>
+</html>
