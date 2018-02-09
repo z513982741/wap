@@ -145,12 +145,11 @@ input {
 
 /*-------登录-------start*/
 .container {
-  padding: 0 1.5rem; }
-  .container.posi {
-    position: relative;
+  position: relative;
+  padding: 0 1.5rem;
+  min-height: 95%; }
+  .container.pb5 {
     padding-bottom: 5rem; }
-    .container.posi .page-icon {
-      position: absolute; }
 
 .login-bg {
   width: 10rem;
@@ -282,7 +281,7 @@ input {
 
 .page-icon {
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 1.2rem;
   left: 0;
   animation: myfirst 1s;
@@ -349,6 +348,7 @@ input {
       width: 1.5rem; }
 
 .page-bg {
+  margin: 0 auto;
   width: 16.25rem;
   height: 7.1rem;
   background: url(../img/list/bg-01.png) no-repeat;
@@ -525,6 +525,7 @@ input {
 /*动画*/
 .an-bg {
   position: fixed;
+  z-index: 9999999;
   top: 0;
   right: 0;
   bottom: 0;
@@ -534,6 +535,7 @@ input {
 .an-bx {
   width: 100%;
   position: fixed;
+  z-index: 9999999;
   text-align: center;
   top: 50%; }
   .an-bx img {
@@ -543,6 +545,7 @@ input {
 .an-cd {
   width: 100%;
   position: fixed;
+  z-index: 9999999;
   text-align: center;
   height: 100%;
   top: 50%;
@@ -557,6 +560,7 @@ input {
   height: 100%;
   top: 20%;
   position: fixed;
+  z-index: 9999999;
   background: url(../img/animate/red.png) no-repeat center 0;
   background-size: 10rem; }
   .an-red h5 {
@@ -606,6 +610,7 @@ input {
   width: 100%;
   top: 50%;
   position: fixed;
+  z-index: 9999999;
   margin-top: 3rem; }
   .an-red-icon img {
     width: 100%;
@@ -615,6 +620,7 @@ input {
   width: 100%;
   top: 50%;
   position: fixed;
+  z-index: 9999999;
   text-align: center;
   margin-top: 6rem; }
   .an-red-bx img {
