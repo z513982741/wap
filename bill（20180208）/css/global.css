@@ -659,5 +659,11 @@ input {
   to {
     transform: scale(1); } }
 /*动画 end*/
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  overflow: auto; }
 
 /*# sourceMappingURL=global.css.map */
